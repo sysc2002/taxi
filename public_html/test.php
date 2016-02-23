@@ -12,6 +12,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+
+
+echo "in is".$_POST['adType'];
+
 $sql = "SELECT * FROM test";
 $result = $conn->query($sql);
 
