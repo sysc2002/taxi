@@ -83,6 +83,9 @@
 
 <body>
 
+
+    
+
     <!-- loaded by jquery navigation.html page -->
     <div id="navigation"></div>
 
@@ -98,9 +101,10 @@
         </div>
         <!-- /.row -->
 
+        <?php require 'action.php';?>
         
         <div class="row">
-            <form role="form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="post">
+            <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  enctype="multipart/form-data">
                                         <div class="form-group"  >
                                             <label>Select ad Type</label>
                                             <select  id="type" class="form-control" name="adType">
@@ -160,16 +164,16 @@
                                             <div class="form-group" >
                                                 <label>License included</label>
                                                 <select  class="form-control" name="Licenseincluded">
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No</option>
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group" >
                                                 <label>Car included</label>
                                                 <select  id="carIncluded" class="form-control" name="Carincluded">
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No</option>
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
                                                 </select>
                                             </div>
 
@@ -183,7 +187,7 @@
 
 
                                         <div class="form-group">
-                                            <input type="file" class="dimmy" id="image-input" multiple  />
+                                            <input type="file" class="dimmy" id="image-input" name="image-input" multiple accept="image/*"  />
                                             <div class="preview-area thumbnail" style="width: 800px; height: 150px;"></div>
                                             
                                         </div>
@@ -198,7 +202,7 @@
 
 
 
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                                         
                                     </form>
         </div>
